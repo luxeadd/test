@@ -1,0 +1,53 @@
+@use 'global' as * ; 
+
+.c-title1 {
+  font-size: rem(20);
+  color: $white;
+  text-align: center;
+}
+.c-title1--left {
+  position: relative;
+}
+.c-title1--left::before {
+  content: attr(title);
+  display: block;
+  font-size: rem(50);
+  font-family: $second-font-family;
+  color: rgba($color: $yellow, $alpha: 0.2);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -57%);
+}
+.c-title1--right {
+  position: relative;
+}
+.c-title1--right::before {
+  content: attr(title);
+  display: block;
+  font-size: rem(50);
+  font-family: $second-font-family;
+  color: rgba($color: $yellow, $alpha: 0.2);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -57%);
+}
+
+@include mq(tab) {
+  .c-title1 {
+    font-size: rem(30);
+  }
+  .c-title1--left::before {
+    font-size: rem(110);
+    top: 0;
+    left: 0;
+    transform: translate(0, -23%);
+  }
+  .c-title1--right::before {
+    font-size: rem(110);
+    top: 0;
+    right: 0;
+    transform: translate(0, -23%);
+  }
+}

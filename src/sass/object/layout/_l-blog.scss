@@ -1,0 +1,14 @@
+@use 'global' as * ; 
+
+.l-blog  {
+  margin-top: rem(120);
+  @include mq(tab) {
+    margin-top: rem(222);
+  }
+}
+.l-blog--sub  {
+  margin-top: rem(115);
+  @include mq(tab) {
+    margin-top: rem(115);
+  }
+}

@@ -1,0 +1,9 @@
+@use 'global' as * ; 
+
+.p-lists {
+
+}
+.p-lists__item + .p-lists__item {
+  margin-top: rem(32);
+ 
+}

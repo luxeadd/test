@@ -1,0 +1,13 @@
+@use 'global' as * ; 
+
+.p-tiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+.p-tiles__item {
+  width: 50%;
+
+  @include mq(tab) {
+    width: 25%;
+  }
+}

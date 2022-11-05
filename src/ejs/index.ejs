@@ -1,0 +1,258 @@
+<% 
+const baseMeta = { 
+	title:'トップページ', 
+	desc:'ディスクリプション',
+	path:'./',
+	page:'top',
+	}; 
+%> 
+
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(baseMeta.path + 'common/_head', { baseMeta:baseMeta } ) %>
+	<body>
+	<!-- ヘッダー -->
+  <%- include(baseMeta.path + 'common/_header', { baseMeta:baseMeta } ) %>
+
+   <!-- MV -->
+	 <div class="p-mv js-mv">
+		<div class="p-mv__img">
+			<img src="/images/top/mv1.jpg" alt="mv">
+		</div>
+		<div class="p-mv__block">
+			<h2 class="p-mv__title">メインタイトルが入ります</h2>
+			<p class="p-mv__title-sub">サブタイトルが入ります</p>
+		</div>
+	 </div>
+
+	 <!-- news -->
+	 <div class="p-news l-news">
+		<div class="l-inner">
+			<div class="p-news__contents">
+				<div class="p-news__body">
+					<div class="p-lists">
+						<% for (var i=0; i < 3; i++) { %>
+						<article class="p-lists__item">
+						<%- include(baseMeta.path + 'parts/_c-list', { 
+							datetime:'2020-07-20', 
+							time:'2020.07.20',
+							cat:'お知らせ',
+							link:'#',
+							title:'記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。'
+						} )%>
+						</article>
+						<% }  %>
+				 </div>
+				</div>
+				<div class="p-news__btn">
+					<a href="#" class="c-btn-slide c-btn-slide--2">すべて見る</a>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+	 <!-- 事業内容 -->
+   <section class="p-content l-content">
+		 <div class="l-inner">
+			<div class="p-content__title">
+				<%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--left', title:'事業内容' , subtitle:'Content'} )%>
+			</div>
+			<div class="p-content__body">
+				<div class="p-tiles">
+					<div class="p-tiles__item">
+						<%- include(baseMeta.path + 'parts/_p-tile', { 
+							img:'/images/top/content4.jpg',
+							alt:'画像',
+							link:'#',
+							text:'経営理念ページへ'
+						} )%>
+					</div>
+					<div class="p-tiles__item">
+						<%- include(baseMeta.path + 'parts/_p-tile', { 
+							img:'/images/top/content1.jpg',
+							alt:'画像',
+							link:'#',
+							text:'理念1へ'
+						} )%>
+					</div>
+					<div class="p-tiles__item">
+						<%- include(baseMeta.path + 'parts/_p-tile', { 
+							img:'/images/top/content2.jpg',
+							alt:'画像',
+							link:'#',
+							text:'理念2へ'
+						} )%>
+					</div>
+					<div class="p-tiles__item">
+						<%- include(baseMeta.path + 'parts/_p-tile', { 
+							img:'/images/top/content3.jpg',
+							alt:'画像',
+							link:'#',
+							text:'理念3へ'
+						} )%>
+					</div>
+				</div>
+			</div>
+		</div>
+	 </section>
+
+  <!-- 制作実績 -->
+	<section class="p-works l-works">
+		<div class="p-works__title">
+			 <div class="l-inner">
+				 <%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--right', title:'制作実績' , subtitle:'Works'} )%>
+			 </div>
+		</div>
+		<div class="p-works__body">
+			<div class="l-inner">
+				<%- include(baseMeta.path + 'parts/_p-media', { 
+					mod1:'',
+					mod2:'',
+					img:'/images/top/works1.jpg',
+					alt:'画像',
+					title:'メインタイトルが入ります。', 
+					text:'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+					btn:'#',
+					text2:'詳しく見る'
+					})%>
+			</div>
+		</div>
+	</section>
+
+	<!-- 企業概要 -->
+	<section class="p-overview l-works">
+		<div class="p-overview__title">
+			 <div class="l-inner">
+				 <%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--left', title:'企業概要' , subtitle:'Overview'} )%>
+			 </div>
+		</div>
+		<div class="p-overview__body">
+			<div class="l-inner">
+				<%- include(baseMeta.path + 'parts/_p-media', { 
+					mod1:'p-media--re',
+					mod2:'p-media__block--re',
+					img:'/images/top/works1.jpg',
+					alt:'画像',
+					title:'メインタイトルが入ります。', 
+					text:'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+					btn:'#',
+					text2:'詳しく見る'
+					})%>
+			</div>
+		</div>
+	</section>
+
+  <!-- ブログ -->
+	<section class="p-blog l-blog">
+		<div class="l-inner">
+			<div class="p-blog__title">
+					<%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--right', title:'ブログ' , subtitle:'Blog'} )%>
+		 </div>
+		 	<div class="p-blog__body">
+					<% const cardLists=[
+					{
+						link:'#', 
+						img:'/images/top/item1.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item2.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+				] %>
+		
+				<div class="p-cards1">
+					<% for (var cardList of cardLists) {%>
+						<article class="p-cards1__item">
+						<%- include(baseMeta.path + 'parts/_c-card1', { 
+							link:cardList.link, 
+							img:cardList.img,
+							alt:cardList.alt, 
+							title:cardList.title,
+							text:cardList.text,
+							cat:cardList.cat, 
+							datetime:cardList.datetime, 
+							time:cardList.time
+						})%>
+						</article>
+					<% } %>
+				</div>
+		 </div>
+		 <div class="p-blog__btn">
+			<%- include(baseMeta.path + 'parts/_c-btn-slide', { link:'#', text:'詳しく見る'} )%>
+		 </div>
+		</div>
+	</section>
+
+  <!-- お問い合わせ -->
+	<section class="p-contact l-contact">
+		<div class="l-inner">
+			<div class="p-contact__title">
+				<%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--left', title:'お問い合わせ' , subtitle:'Contact'} )%>
+			</div>
+			<div class="p-contact__body">
+				<p class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-contact__text -->
+			</div>
+			<div class="p-contact__btn">
+				<%- include(baseMeta.path + 'parts/_c-btn-slide', { link:'#', text:'詳しく見る'} )%>
+			</div>
+		</div>
+	</section>
+ 
+	<!-- ページトップボタン -->
+	  <%- include(baseMeta.path +'parts/_c-page-top') %>
+  <!-- フッター -->
+		<%- include(baseMeta.path +'common/_footer') %>
+  </body>
+</html>

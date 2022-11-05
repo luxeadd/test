@@ -1,0 +1,32 @@
+@use 'global' as * ; 
+
+.p-works {
+ 
+}
+.p-works__title {
+
+}
+.p-works__body {
+ margin-top: rem(48);
+
+}
+
+@include mq(tab) {
+  .p-works__body {
+    margin-top: rem(48);
+    padding: rem(80) 0;
+    width: 100%;
+    position: relative;
+   }
+   .p-works__body::before {
+    content: "";
+    display: block;
+    width: calc(896 / 1280) * 100vw;
+    height: 100%;
+    background: $back;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+   }
+}

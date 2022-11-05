@@ -1,0 +1,13 @@
+@use 'global' as * ; 
+
+.p-content {
+ 
+}
+.p-content__title {
+
+}
+.p-content__body {
+ margin: rem(48) calc(50% - 50vw);
+ width: 100vw;
+
+}

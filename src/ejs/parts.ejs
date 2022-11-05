@@ -1,0 +1,173 @@
+<% 
+const baseMeta = { 
+	title:'パーツページ', 
+	desc:'ディスクリプション',
+	path:'./',
+	page:'top',
+	}; 
+%> 
+
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(baseMeta.path + 'common/_head', { baseMeta:baseMeta } ) %>
+	<body>
+  <%- include(baseMeta.path + 'common/_header', { baseMeta:baseMeta } ) %>
+	<div class="l-parts">
+   <div class="l-inner">
+	 <div class="l-parts__sec">
+		<div class="">c-title1</div>
+		<%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--left', title:'事業内容' , subtitle:'Content'} )%>
+	 </div><!-- /.l-parts__sec -->
+
+	 <div class="l-parts__sec">
+		<div class="">c-card1</div>
+		<%- include(baseMeta.path + 'parts/_c-card1', { 
+			link:'#', 
+			img:'./images/top/item1.jpg',
+			alt:'カード', 
+			title:'タイトルが入ります。タイトルが入ります',
+			text:'説明文が入ります。説明文が入ります。説明文が入ります',
+			cat:'カテゴリ', 
+			datetime:'2021-07-20', 
+			time:'2021.07.20'
+			})%>
+	 </div><!-- /.l-parts__sec -->
+
+	 <div class="l-parts__sec">
+
+		<% const cardLists=[
+  {
+		link:'#', 
+		img:'./images/top/item1.jpg',
+		alt:'カード', 
+		title:'タイトルが入ります。タイトルが入ります',
+		text:'説明文が入ります。説明文が入ります。説明文が入ります',
+		cat:'カテゴリ', 
+		datetime:'2021-07-20', 
+		time:'2021.07.20'
+  },
+  {
+		link:'#', 
+		img:'./images/top/item2.jpg',
+		alt:'カード', 
+		title:'タイトルが入ります。タイトルが入ります',
+		text:'説明文が入ります。説明文が入ります。説明文が入ります',
+		cat:'カテゴリ', 
+		datetime:'2021-07-20', 
+		time:'2021.07.20'
+  },
+  {
+		link:'#', 
+		img:'./images/top/item3.jpg',
+		alt:'カード', 
+		title:'タイトルが入ります。タイトルが入ります',
+		text:'説明文が入ります。説明文が入ります。説明文が入ります',
+		cat:'カテゴリ', 
+		datetime:'2021-07-20', 
+		time:'2021.07.20'
+  },
+ ] %>
+
+ <div class="p-cards1">
+  <% for (var cardList of cardLists) {%>
+		<article class="p-cards1__item">
+		<%- include(baseMeta.path + 'parts/_c-card1', { 
+			link:cardList.link, 
+			img:cardList.img,
+			alt:cardList.alt, 
+			title:cardList.title,
+			text:cardList.text,
+			cat:cardList.cat, 
+			datetime:cardList.datetime, 
+			time:cardList.time
+		})%>
+		</article>
+  <% } %>
+</div>
+
+</div><!-- /.l-parts__sec -->
+
+<div class="l-parts__sec">
+	<%- include(baseMeta.path + 'parts/_p-media', { 
+		mod1:'',
+    mod2:'',
+		img:'./images/top/works1.jpg',
+		alt:'画像',
+		title:'メインタイトルが入ります。', 
+		text:'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+		btn:'#',
+		text2:'詳しく見る'
+	  })%>
+</div><!-- /.l-parts__sec -->
+
+<div class="l-parts__sec">
+	<%- include(baseMeta.path + 'parts/_p-media', { 
+		mod1:'p-media--re',
+    mod2:'p-media__block--re',
+		img:'./images/top/works1.jpg',
+		alt:'画像',
+		title:'メインタイトルが入ります。', 
+		text:'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+		btn:'#',
+		text2:'詳しく見る'
+	  })%>
+</div><!-- /.l-parts__sec -->
+
+<div class="l-parts__sec">
+	<div class="p-tiles">
+		<div class="p-tiles__item">
+			<%- include(baseMeta.path + 'parts/_p-tile', { 
+				img:'./images/top/content4.jpg',
+				alt:'画像',
+				link:'#',
+				text:'経営理念ページへ'
+			} )%>
+		</div>
+		<div class="p-tiles__item">
+			<%- include(baseMeta.path + 'parts/_p-tile', { 
+				img:'./images/top/content1.jpg',
+				alt:'画像',
+				link:'#',
+				text:'理念1へ'
+			} )%>
+		</div>
+		<div class="p-tiles__item">
+			<%- include(baseMeta.path + 'parts/_p-tile', { 
+				img:'./images/top/content2.jpg',
+				alt:'画像',
+				link:'#',
+				text:'理念2へ'
+			} )%>
+		</div>
+		<div class="p-tiles__item">
+			<%- include(baseMeta.path + 'parts/_p-tile', { 
+				img:'./images/top/content3.jpg',
+				alt:'画像',
+				link:'#',
+				text:'理念3へ'
+			} )%>
+		</div>
+	</div>
+</div><!-- /.l-parts__sec -->
+<div class="l-parts__sec">
+	<%- include(baseMeta.path + 'parts/_c-list', { 
+		datetime:'2020-07-20', 
+		time:'2020.07.20',
+		cat:'お知らせ',
+		link:'#',
+		title:'記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。'
+	} )%>
+</div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+<div class="l-parts__sec"></div><!-- /.l-parts__sec -->
+
+	</div><!-- /.l-inner -->
+	</div><!-- /.l-parts -->
+  <%- include(baseMeta.path +'common/_footer') %>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+@use 'global' as * ; 
+
+.p-header-menu {
+  position: fixed;
+  width: 100%;
+  max-width: rem(520);
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  color: #fff;
+  transform: translateX(2000px);
+  transition: 0.4s;
+  z-index: 4;
+ 
+  
+}
+.is-drawerActive {
+  .p-header-menu {
+    background-color: #000;
+    transform: translateX(0px);
+
+  }
+}
+.p-header-menu__items {
+  height: inherit;
+  padding: rem(120) 0 rem(100);
+
+}
+
+.p-header-menu__item {
+ 
+
+}
+
+.p-header-menu__item + .p-header-menu__item {
+
+}
+
+.p-header-menu__item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: rem(10) 0;
+  text-align: center;
+}
+
+
+
+
+
+@include mq(tab) {
+  .p-header-menu {
+    position: initial;
+    width: initial;
+    max-width: initial;
+    height: inherit;
+    overflow-y: initial;
+    background-color: initial;
+    color: #fff;
+    transform: initial;
+    transition: initial;
+   
+
+  }
+  .p-header-menu__items {
+    display: flex;
+    height: inherit;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .p-header-menu__item {
+  height: inherit;
+
+  
+  }
+  .p-header-menu__item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: rem(-8);
+    background: $yellow;
+    opacity: 0;
+    transition: .3s;
+  }
+  .p-header-menu__item:hover::after {
+    opacity: 1;
+  }
+  .p-header-menu__item + .p-header-menu__item {
+  margin-left: rem(30);
+  }
+  
+  .p-header-menu__item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+  
+  }
+  .p-header-menu__btn {
+    margin-left: rem(30);
+    width: rem(170);
+    height: inherit;
+  }
+}
+

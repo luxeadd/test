@@ -1,0 +1,31 @@
+@use 'global' as * ; 
+
+.p-news {
+
+}
+.p-news__body {
+  width: 100%;
+}
+
+.p-news__btn {
+  margin-top: rem(28);
+  text-align: center;
+}
+
+@include mq(tab) {
+  .p-news {
+    
+  }
+  .p-news__contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .p-news__body {
+    
+  }
+  .p-news__btn {
+    margin-top: initial;
+    flex: 0 0 rem(138);
+    margin-left: rem(38);
+  }
+}

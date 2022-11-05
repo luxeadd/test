@@ -1,0 +1,166 @@
+<% 
+const baseMeta = { 
+	title:'Blog', 
+	desc:'ディスクリプション',
+	path:'../',
+	page:'blog',
+	}; 
+%> 
+
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(baseMeta.path + 'common/_head', { baseMeta:baseMeta } ) %>
+	<body>
+	<!-- ヘッダー -->
+  <%- include(baseMeta.path + 'common/_header', { baseMeta:baseMeta } ) %>
+
+   <!-- MV -->
+	 <div class="p-mv js-mv">
+		<div class="p-mv__img">
+			<img src="/images/top/mv1.jpg" alt="mv">
+		</div>
+		<div class="p-mv__block">
+			<h2 class="p-mv__title">メインタイトルが入ります</h2>
+			<p class="p-mv__title-sub">サブタイトルが入ります</p>
+		</div>
+	 </div>
+
+
+  <!-- ブログ -->
+	<section class="p-blog l-blog--sub">
+		<div class="l-inner">
+		 	<div class="p-blog__body">
+					<% const cardLists=[
+					{
+						link:'#', 
+						img:'/images/top/item1.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item2.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+					{
+						link:'#', 
+						img:'/images/top/item3.jpg',
+						alt:'カード', 
+						title:'タイトルが入ります。タイトルが入ります',
+						text:'説明文が入ります。説明文が入ります。説明文が入ります',
+						cat:'カテゴリ', 
+						datetime:'2021-07-20', 
+						time:'2021.07.20'
+					},
+				] %>
+		
+				<div class="p-cards1">
+					<% for (var cardList of cardLists) {%>
+						<article class="p-cards1__item">
+						<%- include(baseMeta.path + 'parts/_c-card1', { 
+							link:cardList.link, 
+							img:cardList.img,
+							alt:cardList.alt, 
+							title:cardList.title,
+							text:cardList.text,
+							cat:cardList.cat, 
+							datetime:cardList.datetime, 
+							time:cardList.time
+						})%>
+						</article>
+					<% } %>
+				</div>
+		 </div>
+		</div>
+	</section>
+
+  <!-- お問い合わせ -->
+	<section class="p-contact l-contact">
+		<div class="l-inner">
+			<div class="p-contact__title">
+				<%- include(baseMeta.path + 'parts/_c-title1', { mod:'c-title1--left', title:'お問い合わせ' , subtitle:'Contact'} )%>
+			</div>
+			<div class="p-contact__body">
+				<p class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-contact__text -->
+			</div>
+			<div class="p-contact__btn">
+				<%- include(baseMeta.path + 'parts/_c-btn-slide', { link:'#', text:'詳しく見る'} )%>
+			</div>
+		</div>
+	</section>
+ 
+	<!-- ページトップボタン -->
+	  <%- include(baseMeta.path +'parts/_c-page-top') %>
+  <!-- フッター -->
+		<%- include(baseMeta.path +'common/_footer') %>
+  </body>
+</html>

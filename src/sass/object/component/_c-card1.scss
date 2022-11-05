@@ -1,0 +1,80 @@
+@use 'global' as * ; 
+
+.c-card1 {
+  width: 100%;
+  height: 100%;
+  background: $white;
+  transition: .3s;
+}
+.c-card1:hover {
+  background: $base;
+
+  .c-card1__title,
+  .c-card1__text,
+  .c-card1__time {
+    color: $white;
+  }
+  
+}
+.c-card1 a {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+
+}
+
+.c-card1__img {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    padding-top: calc(223 / 335) * 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.c-card1__body {
+  padding: rem(4) rem(24) 0;
+ 
+}
+.c-card1__title {
+ font-size: rem(18);
+ font-weight: 500;
+ line-height: 1.9444;
+ transition: .3s;
+}
+.c-card1__text-box {
+  margin-top: rem(4);
+
+}
+.c-card1__text {
+ font-size: rem(14);
+ line-height: 1.8571;
+ transition: .3s;
+}
+.c-card1__bottom {
+ margin-top: auto;
+ padding: rem(5) rem(24) rem(15) ;
+ display: flex;
+ justify-content: space-between;
+
+}
+.c-card1__category {
+  display: inline-block;
+  font-size: rem(14);
+  padding: rem(5) ;
+  background: $yellow;
+}
+.c-card1__time {
+  font-size: rem(14);
+  transition: .3s;
+}

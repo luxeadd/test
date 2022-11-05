@@ -1,0 +1,27 @@
+@use 'global' as * ; 
+
+.p-cards1 {
+ width: 100%;
+}
+.p-cards1__item {
+
+}
+.p-cards1__item + .p-cards1__item {
+  margin-top: rem(24);
+}
+
+
+@include mq(tab) {
+  .p-cards1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(25);
+   }
+   .p-cards1__item {
+    width: calc(33.3% - #{rem(25)} * 2 / 3);
+   }
+   .p-cards1__item + .p-cards1__item {
+     margin-top: initial;
+   }
+   
+}

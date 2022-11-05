@@ -1,0 +1,33 @@
+@use 'global' as * ; 
+
+.p-contact {
+  padding: rem(64) 0;
+  background-color: $back2;
+}
+.p-contact__body {
+  margin-top: rem(16);
+}
+.p-contact__text {
+  font-size: rem(16);
+  color: $white;
+  letter-spacing: 0.125em;
+}
+.p-contact__btn {
+  margin-top: rem(40);
+  text-align: center;
+}
+
+@include mq(tab) {
+  .p-contact {
+    padding: rem(148) 0;
+  }
+  .p-contact__body {
+    margin-top: rem(24);
+  }
+  .p-contact__text {
+    text-align: center;
+  }
+  .p-contact__btn {
+    margin-top: rem(49);
+  }
+}
